@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript" src="../shiva.js"></script>
+	<style type="text/css">
+		body {
+		  font: 10px sans-serif;
+		}
+
+		.chord path {
+		  fill-opacity: .67;
+		  stroke: #000;
+		  stroke-width: .5px;
+		}
+	</style>
+</head>
+<body>
+<div id="chord" style="width:400px;height:500px;"></div>
+<script type="text/javascript">
+	var matrix = [
+	  [11975,  5871, 8916, 2868,890,1756],
+	  [ 1951, 10048, 2060, 6171,987,1456],
+	  [ 8010, 16145, 8090, 8045,687,1234],
+	  [ 1013,   990,  940, 6907,598,2764],
+	   [ 1013,   990,  940, 6907,598,1647],
+	   [ 1013,   990,  940, 6907,598,1745]
+	];
+	
+	Shiva.Chord({
+		container:'chord', 
+		matrix : matrix
+	});
+</script>
+</body>
+</html>
