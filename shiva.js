@@ -10,10 +10,13 @@ MIT Licence
 
 	// still maintains access to all globals
 	Shiva.Chord = (function() {
-		var matrix, container;
+		var matrix, 
+		container, 
+		color = ['#c7b570','#c6cdc7','#335c64','#768935','#507282','#5c4a56','#aa7455','#574109','#837722','#73342d','#0a5564','#9c8f57','#7895a4','#4a5456','#b0a690','#0a3542'];
 	  	return function(options){
 	  		matrix = options.matrix;
 	  		container = options.container;
+	  		color = options.color || color;
 	  		var chord = d3.layout.chord()
 			    .padding(.05)
 			    .sortSubgroups(d3.descending)
@@ -26,7 +29,7 @@ MIT Licence
 
 			var fill = d3.scale.ordinal()
 			    .domain(d3.range(4))
-			    .range(['#c7b570','#c6cdc7','#335c64','#768935','#507282','#5c4a56','#aa7455','#574109','#837722','#73342d','#0a5564','#9c8f57','#7895a4','#4a5456','#b0a690','#0a3542']);
+			    .range(color);
 
 			var svg = d3.select(document.getElementById(container)).append("svg")
 			    .attr("width", width)
